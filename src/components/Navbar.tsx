@@ -53,7 +53,7 @@ export const Navbar = () => {
             <li key={item.label}>
               <a
                 href={item.href}
-                className="group relative text-xs font-medium uppercase tracking-[0.25em] text-muted-foreground transition-colors hover:text-foreground"
+                className="group relative text-xs font-bold uppercase tracking-[0.25em] text-muted-foreground transition-colors hover:text-foreground"
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-primary transition-all duration-500 ease-out-expo group-hover:w-full" />

@@ -167,10 +167,6 @@ export const Hero = () => {
 
         {/* ── Text Block ── */}
         <div className="hero-content flex flex-col items-center justify-center px-6 pt-24 pb-4 text-center">
-          <span className="hero-eyebrow text-[10px] md:text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground mb-4">
-            Est. 2014 — Premium Auto Detailing
-          </span>
-
           <h1 className="hero-title text-[2.5rem] md:text-6xl lg:text-7xl font-black uppercase tracking-tight text-foreground leading-[1.05]">
             <span className="hero-title-line block">Where Every Detail</span>
             <span className="hero-title-line block text-gradient-gold">
