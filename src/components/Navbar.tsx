@@ -44,7 +44,7 @@ export const Navbar = () => {
           <img 
             src={kotohausLogo} 
             alt="Kotohaus Detailing Logo" 
-            className="h-[85px] md:h-[110px] w-auto mix-blend-screen transition-all duration-300 hover:opacity-80" 
+            className="h-[127px] md:h-[165px] w-auto mix-blend-screen transition-all duration-300 hover:opacity-80" 
           />
         </Link>
 
