@@ -102,59 +102,60 @@ export const Services = () => {
           {SERVICES.map((s) => (
             <article
               key={s.n}
-              className="service-row group relative grid grid-cols-12 items-center gap-6 py-10 md:py-14"
+              className="service-row group relative flex flex-col py-10 md:py-14 transition-colors hover:bg-white/[0.01]"
             >
               {/* Animated gold line */}
               <span className="service-line absolute inset-x-0 top-0 h-px origin-left bg-gradient-to-r from-primary/60 via-primary/30 to-transparent" />
 
-              <div className="col-span-2 md:col-span-1">
-                <div className="reveal-mask overflow-hidden">
-                  <span className="block text-sm font-medium text-primary">
-                    {s.n}
-                  </span>
+              {/* Main Row Content */}
+              <div className="grid grid-cols-12 items-center gap-6">
+                <div className="col-span-2 md:col-span-1">
+                  <div className="reveal-mask overflow-hidden">
+                    <span className="block text-sm font-medium text-primary">
+                      {s.n}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="col-span-10 md:col-span-5">
+                  <div className="reveal-mask overflow-hidden">
+                    <h3 className="display-lg text-3xl text-foreground transition-colors duration-500 md:text-5xl group-hover:text-primary">
+                      {s.title}
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="col-span-12 md:col-span-4">
+                  <div className="reveal-mask overflow-hidden">
+                    <p className="text-base text-muted-foreground md:text-lg">
+                      {s.desc}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="col-span-12 mt-4 hidden md:col-span-2 md:mt-0 md:block">
+                  <div className="reveal-mask overflow-hidden text-right">
+                    <a
+                      href="#cta"
+                      className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground transition-colors group-hover:text-primary"
+                    >
+                      Inquire <span aria-hidden>→</span>
+                    </a>
+                  </div>
                 </div>
               </div>
 
-              <div className="col-span-10 md:col-span-5">
-                <div className="reveal-mask overflow-hidden">
-                  <h3 className="display-lg text-3xl text-foreground transition-colors duration-500 md:text-5xl group-hover:text-primary">
-                    {s.title}
-                  </h3>
+              {/* Collapsible Image block — expands the frame row down */}
+              <div className="w-full overflow-hidden transition-all duration-700 ease-out-expo max-h-0 group-hover:max-h-[400px] mt-0 group-hover:mt-8 hidden lg:flex justify-end pr-[12%] opacity-0 group-hover:opacity-100">
+                <div className="h-[280px] w-[500px] overflow-hidden rounded-md shadow-gold-soft relative border border-white/10">
+                  <img
+                    src={s.image}
+                    alt=""
+                    className="h-full w-full object-cover transform scale-110 group-hover:scale-100 transition-transform duration-[1.5s] ease-out-expo"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
                 </div>
-              </div>
-
-              <div className="col-span-12 md:col-span-4">
-                <div className="reveal-mask overflow-hidden">
-                  <p className="text-base text-muted-foreground md:text-lg">
-                    {s.desc}
-                  </p>
-                </div>
-              </div>
-
-              <div className="col-span-12 mt-4 hidden md:col-span-2 md:mt-0 md:block">
-                <div className="reveal-mask overflow-hidden text-right">
-                  <a
-                    href="#cta"
-                    className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground transition-colors group-hover:text-primary"
-                  >
-                    Inquire <span aria-hidden>→</span>
-                  </a>
-                </div>
-              </div>
-
-              {/* Hover image preview — floats in from right */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute right-[12%] top-1/2 z-20 h-56 w-80 -translate-y-1/2 overflow-hidden rounded-sm opacity-0 shadow-gold-soft transition-all duration-700 ease-out-expo group-hover:opacity-100 group-hover:translate-x-[-30px] hidden lg:block"
-              >
-                <img
-                  src={s.image}
-                  alt=""
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
-                {/* Gloss sweep on hover */}
-                <span className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-light-streak" />
               </div>
             </article>
           ))}

@@ -35,8 +35,8 @@ export const Navbar = () => {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out-expo",
         scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border/60 py-3"
-          : "bg-transparent py-6"
+          ? "bg-background/95 border-b border-border/40 py-3"
+          : "bg-transparent py-5"
       )}
     >
       <nav className="container mx-auto flex items-center justify-between px-6">
@@ -44,7 +44,7 @@ export const Navbar = () => {
           <img 
             src={kotohausLogo} 
             alt="Kotohaus Detailing Logo" 
-            className="h-[126px] md:h-[153px] w-auto mix-blend-screen transition-opacity hover:opacity-80" 
+            className="h-[70px] md:h-[84px] w-auto mix-blend-screen transition-all duration-300 hover:opacity-80" 
           />
         </Link>
 
