@@ -84,27 +84,29 @@ export const CTA = () => {
           </a>
         </div>
 
-        <div className="mt-20 grid grid-cols-3 gap-4 border-t border-border pt-10 text-left">
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 border-t border-border pt-10 text-left">
           <div>
             <div className="label-mono text-primary">Atelier</div>
-            <div className="mt-2 text-sm text-foreground/80">
-              Los Angeles
+            <div className="mt-2 text-sm text-foreground/80 leading-relaxed">
+              Main road, GMS Rd, Keshav Vihar,
               <br />
-              Miami
+              Shakti Enclave, Kanwali, 
+              <br />
+              Dehradun, Uttarakhand 248001
             </div>
           </div>
           <div>
             <div className="label-mono text-primary">Hours</div>
-            <div className="mt-2 text-sm text-foreground/80">
-              By appointment
+            <div className="mt-2 text-sm text-foreground/80 leading-relaxed">
+              Mon — Sat: 10:00 AM — 8:00 PM
               <br />
-              Mon — Sat
+              Sunday: Closed
             </div>
           </div>
           <div>
             <div className="label-mono text-primary">Contact</div>
-            <div className="mt-2 text-sm text-foreground/80">
-              hello@apexdetail.co
+            <div className="mt-2 text-sm text-foreground/80 leading-relaxed">
+              hello@kotohaus.com
               <br />
               (310) 555-0144
             </div>

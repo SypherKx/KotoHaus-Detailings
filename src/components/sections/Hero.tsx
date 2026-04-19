@@ -209,7 +209,7 @@ export const Hero = () => {
         </div>
         <div className="hero-meta label-mono hidden text-right md:block">
           <div className="text-foreground/50">N°001 / Atelier</div>
-          <div className="mt-1 text-primary">Los Angeles · Miami</div>
+          <div className="mt-1 text-primary">Dehradun, Uttarakhand</div>
         </div>
       </div>
     </section>
