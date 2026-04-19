@@ -166,7 +166,7 @@ export const Hero = () => {
       <div className="relative z-10 flex h-full w-full flex-col">
 
         {/* ── Text Block ── */}
-        <div className="hero-content flex flex-col items-center justify-center px-6 pt-16 pb-4 text-center">
+        <div className="hero-content flex flex-col items-center justify-center px-6 pt-44 pb-4 text-center">
           <h1 className="hero-title text-[2.5rem] md:text-6xl lg:text-7xl font-black uppercase tracking-tight text-foreground leading-[1.05]">
             <span className="hero-title-line block">Where Every Detail</span>
             <span className="hero-title-line block text-gradient-gold">

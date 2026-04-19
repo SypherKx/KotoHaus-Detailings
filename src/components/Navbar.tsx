@@ -44,11 +44,11 @@ export const Navbar = () => {
           <img 
             src={kotohausLogo} 
             alt="Kotohaus Detailing Logo" 
-            className="h-[127px] md:h-[165px] w-auto mix-blend-screen transition-all duration-300 hover:opacity-80 -translate-y-4 md:-translate-y-6" 
+            className="h-[110px] md:h-[140px] w-auto mix-blend-screen transition-all duration-300 hover:opacity-80" 
           />
         </Link>
 
-        <ul className="hidden items-center gap-10 md:flex -translate-y-4 md:-translate-y-6">
+        <ul className="hidden items-center gap-10 md:flex">
           {NAV_ITEMS.map((item) => (
             <li key={item.label}>
               <a
@@ -64,7 +64,7 @@ export const Navbar = () => {
 
         <a
           href="#cta"
-          className="hidden items-center gap-2 rounded-full border border-primary/40 bg-primary/5 px-5 py-2 text-xs font-medium uppercase tracking-[0.25em] text-primary transition-all duration-500 hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-gold md:inline-flex -translate-y-4 md:-translate-y-6"
+          className="hidden items-center gap-2 rounded-full border border-primary/40 bg-primary/5 px-5 py-2 text-xs font-medium uppercase tracking-[0.25em] text-primary transition-all duration-500 hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-gold md:inline-flex"
         >
           Book Now
           <span className="h-1 w-1 rounded-full bg-current" />
