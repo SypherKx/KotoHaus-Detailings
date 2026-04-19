@@ -166,7 +166,7 @@ export const Hero = () => {
       <div className="relative z-10 flex h-full w-full flex-col">
 
         {/* ── Text Block ── */}
-        <div className="hero-content flex flex-col items-center justify-center px-6 pt-36 pb-4 text-center">
+        <div className="hero-content flex flex-col items-center justify-center px-6 pt-32 pb-4 text-center">
           <h1 className="hero-title text-[2.5rem] md:text-6xl lg:text-7xl font-black uppercase tracking-tight text-foreground leading-[1.05]">
             <span className="hero-title-line block">Where Every Detail</span>
             <span className="hero-title-line block text-gradient-gold">
@@ -195,7 +195,7 @@ export const Hero = () => {
           <img
             src={heroCar}
             alt="Mansory Mercedes-Maybach — Kotohaus Detailing"
-            className="w-[75%] md:w-[60%] lg:w-[55%] max-w-[900px] h-auto object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.8)] translate-y-5"
+            className="w-[75%] md:w-[60%] lg:w-[55%] max-w-[900px] h-auto object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.8)] translate-y-2"
             fetchPriority="high"
           />
         </div>
