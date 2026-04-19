@@ -33,72 +33,92 @@ export const Navbar = () => {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out-expo",
+        "fixed z-50 transition-all duration-500 ease-out-expo",
         scrolled
-          ? "bg-gradient-to-b from-black/90 via-black/50 to-transparent py-3"
-          : "bg-transparent py-5"
+          ? "inset-x-3 top-3 rounded-xl bg-black/75 backdrop-blur-2xl border border-white/8 shadow-[0_4px_24px_rgba(0,0,0,0.5)] py-2"
+          : "inset-x-0 top-0 bg-transparent py-4"
       )}
     >
-      <nav className="container mx-auto flex items-center justify-between px-6">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 md:px-6">
+        {/* Logo */}
         <Link to="/" className="group flex items-center">
-          <img 
-            src={kotohausLogo} 
-            alt="Kotohaus Detailing Logo" 
-            className="h-20 md:h-24 w-auto mix-blend-screen transition-all duration-300 hover:opacity-80" 
+          <img
+            src={kotohausLogo}
+            alt="Kotohaus Detailing Logo"
+            className="h-9 md:h-10 w-auto mix-blend-screen transition-opacity duration-300 group-hover:opacity-75"
           />
         </Link>
 
-        <ul className="hidden items-center gap-10 md:flex">
+        {/* Desktop nav links */}
+        <ul className="hidden items-center gap-8 md:flex">
           {NAV_ITEMS.map((item) => (
             <li key={item.label}>
               <a
                 href={item.href}
-                className="group relative text-xs font-bold uppercase tracking-[0.25em] text-muted-foreground transition-colors hover:text-foreground"
+                className="group relative text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-primary transition-all duration-500 ease-out-expo group-hover:w-full" />
+                <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-primary transition-all duration-400 ease-out-expo group-hover:w-full" />
               </a>
             </li>
           ))}
         </ul>
 
+        {/* Desktop CTA */}
         <a
           href="#cta"
-          className="hidden items-center gap-2 rounded-full border border-primary/40 bg-primary/5 px-5 py-2 text-xs font-medium uppercase tracking-[0.25em] text-primary transition-all duration-500 hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-gold md:inline-flex"
+          className="hidden items-center gap-2 rounded-full border border-primary/35 bg-primary/6 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-primary transition-all duration-400 hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-gold md:inline-flex cursor-pointer"
         >
           Book Now
           <span className="h-1 w-1 rounded-full bg-current" />
         </a>
 
+        {/* Hamburger */}
         <button
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden text-foreground"
-          aria-label="Menu"
+          className="md:hidden text-foreground p-1 rounded-md transition-colors hover:bg-white/5 cursor-pointer"
+          aria-label="Toggle Menu"
         >
-          {open ? <X size={22} /> : <Menu size={22} />}
+          {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </nav>
 
-      {/* Mobile sheet */}
+      {/* Mobile dropdown */}
       <div
         className={cn(
-          "md:hidden overflow-hidden transition-all duration-500 ease-out-expo",
-          open ? "max-h-96 border-t border-border/60" : "max-h-0"
+          "md:hidden overflow-hidden transition-all duration-400 ease-out-expo",
+          open ? "max-h-80" : "max-h-0"
         )}
       >
-        <ul className="flex flex-col gap-4 px-6 py-8">
-          {NAV_ITEMS.map((item) => (
-            <li key={item.label}>
-              <a
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="block text-sm uppercase tracking-[0.3em] text-muted-foreground hover:text-primary"
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div
+          className={cn(
+            "mx-3 mb-3 rounded-b-xl border-t border-white/8",
+            !scrolled && "bg-black/80 backdrop-blur-2xl rounded-xl mt-1 border border-white/8"
+          )}
+        >
+          <ul className="flex flex-col px-4 py-5 gap-0.5">
+            {NAV_ITEMS.map((item) => (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="block py-2.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className="px-4 pb-4">
+            <a
+              href="#cta"
+              onClick={() => setOpen(false)}
+              className="block text-center rounded-full border border-primary/35 px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer"
+            >
+              Book Now
+            </a>
+          </div>
+        </div>
       </div>
     </header>
   );

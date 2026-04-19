@@ -61,6 +61,7 @@ export const Gallery = () => {
       id="gallery"
       ref={root}
       className="relative overflow-hidden bg-background"
+      style={{ scrollMarginTop: "80px" }}
     >
       <div className="absolute inset-x-0 top-0 z-10 px-6 pt-24 pointer-events-none">
         <div className="container mx-auto flex items-end justify-between">

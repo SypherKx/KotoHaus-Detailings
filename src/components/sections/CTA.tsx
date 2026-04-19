@@ -41,6 +41,7 @@ export const CTA = () => {
       id="cta"
       ref={root}
       className="relative overflow-hidden bg-background py-32 md:py-44"
+      style={{ scrollMarginTop: "80px" }}
     >
       {/* Animated liquid-gold bg */}
       <div className="cta-bg absolute inset-0 opacity-40 will-change-transform">

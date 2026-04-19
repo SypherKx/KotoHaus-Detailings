@@ -47,9 +47,9 @@ export const Stats = () => {
   }, []);
 
   return (
-    <section ref={root} className="relative bg-background py-24 md:py-32">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-2 gap-y-12 border-y border-border py-16 md:grid-cols-4">
+    <section ref={root} className="relative bg-background py-14 md:py-24">
+      <div className="container mx-auto px-5 md:px-6">
+        <div className="grid grid-cols-2 gap-y-10 border-y border-border py-12 md:py-16 md:grid-cols-4">
           {STATS.map((s) => (
             <div key={s.label} className="stat text-center" data-value={s.value}>
               <div className="display-lg flex items-baseline justify-center text-5xl text-gradient-gold md:text-7xl">

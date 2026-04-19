@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { Hero } from "@/components/sections/Hero";
+import { TrustBar } from "@/components/sections/TrustBar";
 import { Services } from "@/components/sections/Services";
 import { BeforeAfter } from "@/components/sections/BeforeAfter";
 import { Process } from "@/components/sections/Process";
@@ -19,6 +20,7 @@ const Index = () => {
       <Navbar />
       <main className="relative">
         <Hero />
+        <TrustBar />
         <Services />
         <BeforeAfter />
         <Process />

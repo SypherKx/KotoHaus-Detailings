@@ -70,12 +70,13 @@ export const BeforeAfter = () => {
   return (
     <section
       ref={root}
-      className="relative overflow-hidden bg-background py-32 md:py-44"
+      className="relative overflow-hidden bg-background py-14 md:py-28 lg:py-44"
     >
-      <div className="container mx-auto grid grid-cols-12 items-center gap-8 px-6">
+      <div className="container mx-auto grid grid-cols-12 items-center gap-6 md:gap-8 px-5 md:px-6">
         <div className="ba-text col-span-12 md:col-span-4">
           <span className="eyebrow">— The Difference</span>
-          <h2 className="display-lg mt-4 text-foreground">
+          <h2 className="mt-3 font-black uppercase tracking-tight text-foreground leading-[0.95]"
+            style={{ fontSize: "clamp(2rem, 6vw, 4.5rem)" }}>
             Drag.
             <br />
             <span className="text-gradient-gold">Witness.</span>
