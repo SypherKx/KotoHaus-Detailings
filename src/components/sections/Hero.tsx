@@ -191,11 +191,11 @@ export const Hero = () => {
         </div>
 
         {/* ── Car Block (fills remaining height) ── */}
-        <div className="hero-car flex-1 flex items-end justify-center overflow-hidden pointer-events-none">
+        <div className="hero-car flex-1 flex items-end justify-center pointer-events-none">
           <img
             src={heroCar}
             alt="Mansory Mercedes-Maybach — Kotohaus Detailing"
-            className="w-[75%] md:w-[60%] lg:w-[55%] max-w-[900px] h-auto object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.8)]"
+            className="w-[75%] md:w-[60%] lg:w-[55%] max-w-[900px] h-auto object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.8)] translate-y-5"
             fetchPriority="high"
           />
         </div>
