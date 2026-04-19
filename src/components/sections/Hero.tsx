@@ -191,7 +191,7 @@ export const Hero = () => {
         </div>
 
         {/* ── Car Block (fills remaining height) ── */}
-        <div className="hero-car flex-1 flex items-end justify-center pb-10 md:pb-20 pointer-events-none">
+        <div className="hero-car flex-1 flex items-end justify-center pb-24 md:pb-48 pointer-events-none">
           <img
             src={heroCar}
             alt="Mansory Mercedes-Maybach — Kotohaus Detailing"
