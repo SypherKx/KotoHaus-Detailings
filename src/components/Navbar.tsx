@@ -48,7 +48,7 @@ export const Navbar = () => {
           />
         </Link>
 
-        <ul className="hidden items-center gap-10 md:flex">
+        <ul className="hidden items-center gap-10 md:flex -translate-y-4 md:-translate-y-6">
           {NAV_ITEMS.map((item) => (
             <li key={item.label}>
               <a
@@ -64,7 +64,7 @@ export const Navbar = () => {
 
         <a
           href="#cta"
-          className="hidden items-center gap-2 rounded-full border border-primary/40 bg-primary/5 px-5 py-2 text-xs font-medium uppercase tracking-[0.25em] text-primary transition-all duration-500 hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-gold md:inline-flex"
+          className="hidden items-center gap-2 rounded-full border border-primary/40 bg-primary/5 px-5 py-2 text-xs font-medium uppercase tracking-[0.25em] text-primary transition-all duration-500 hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-gold md:inline-flex -translate-y-4 md:-translate-y-6"
         >
           Book Now
           <span className="h-1 w-1 rounded-full bg-current" />
