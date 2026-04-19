@@ -35,7 +35,7 @@ export const Navbar = () => {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out-expo",
         scrolled
-          ? "bg-background/95 border-b border-border/40 py-3"
+          ? "bg-gradient-to-b from-black/90 via-black/50 to-transparent py-3"
           : "bg-transparent py-5"
       )}
     >
