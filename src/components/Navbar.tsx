@@ -17,6 +17,8 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const ticking = useRef(false);
 
+  const headerRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
     const onScroll = () => {
       if (ticking.current) return;
@@ -31,8 +33,25 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close mobile menu when user taps outside the navbar
+  useEffect(() => {
+    if (!open) return;
+    const handleOutside = (e: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    // Slight delay so the open-toggle click doesn't immediately close
+    const id = setTimeout(() => document.addEventListener("click", handleOutside), 50);
+    return () => {
+      clearTimeout(id);
+      document.removeEventListener("click", handleOutside);
+    };
+  }, [open]);
+
   return (
     <header
+      ref={headerRef}
       className={cn(
         "fixed z-50 transition-all duration-500 ease-out-expo",
         scrolled
