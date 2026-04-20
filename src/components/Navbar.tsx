@@ -2,12 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import kotohausLogo from "@/assets/kotohaus-logo.png";
+import kotohausLogo from "@/assets/kotohaus-logo.webp";
 
 const NAV_ITEMS = [
   { label: "Services", href: "#services" },
   { label: "Process", href: "#process" },
   { label: "Gallery", href: "#gallery" },
+  { label: "Location", href: "#location" },
   { label: "Contact", href: "#cta" },
 ];
 

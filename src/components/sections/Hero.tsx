@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import heroCar from "@/assets/hero-car-final.png";
-import bgWaves from "@/assets/bg-waves.png";
+import heroCar from "@/assets/hero-car-final.webp";
+import bgWaves from "@/assets/bg-waves.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,84 +15,84 @@ export const Hero = () => {
     ).matches;
 
     const ctx = gsap.context(() => {
-      if (prefersReduced) {
+      // Pre-hide all animated elements immediately so nothing shows during loader
+      if (!prefersReduced) {
         gsap.set(
-          [
-            ".hero-eyebrow",
-            ".hero-title-line",
-            ".hero-sub",
-            ".hero-cta",
-            ".hero-car-img",
-            ".hero-meta",
-          ],
-          { opacity: 1, y: 0, filter: "blur(0px)" }
+          [".hero-eyebrow", ".hero-title-line", ".hero-sub", ".hero-cta", ".hero-car-img", ".hero-meta", ".hero-glow"],
+          { opacity: 0 }
         );
-        return;
       }
 
-      const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
+      const runEntrance = () => {
+        if (prefersReduced) {
+          gsap.set(
+            [".hero-eyebrow", ".hero-title-line", ".hero-sub", ".hero-cta", ".hero-car-img", ".hero-meta"],
+            { opacity: 1, y: 0, filter: "blur(0px)" }
+          );
+          return;
+        }
 
-      // Eyebrow
-      tl.fromTo(
-        ".hero-eyebrow",
-        { opacity: 0, y: 14, filter: "blur(6px)" },
-        { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.9 },
-        0
-      );
+        const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
 
-      // Title lines — letter-tracking collapse
-      tl.fromTo(
-        ".hero-title-line",
-        { opacity: 0, y: 50, letterSpacing: "0.25em" },
-        {
-          opacity: 1,
-          y: 0,
-          letterSpacing: "-0.03em",
-          duration: 1.5,
-          stagger: 0.1,
-        },
-        0.2
-      );
+        // Eyebrow
+        tl.fromTo(
+          ".hero-eyebrow",
+          { opacity: 0, y: 14, filter: "blur(6px)" },
+          { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.9 },
+          0
+        );
 
-      // Subtitle
-      tl.fromTo(
-        ".hero-sub",
-        { opacity: 0, y: 18, filter: "blur(4px)" },
-        { opacity: 1, y: 0, filter: "blur(0px)", duration: 1.0 },
-        0.5
-      );
+        // Title lines — letter-tracking collapse
+        tl.fromTo(
+          ".hero-title-line",
+          { opacity: 0, y: 50, letterSpacing: "0.25em" },
+          { opacity: 1, y: 0, letterSpacing: "-0.03em", duration: 1.5, stagger: 0.1 },
+          0.2
+        );
 
-      // CTA
-      tl.fromTo(
-        ".hero-cta",
-        { opacity: 0, y: 16, scale: 0.97 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.9 },
-        0.7
-      );
+        // Subtitle
+        tl.fromTo(
+          ".hero-sub",
+          { opacity: 0, y: 18, filter: "blur(4px)" },
+          { opacity: 1, y: 0, filter: "blur(0px)", duration: 1.0 },
+          0.5
+        );
 
-      // Car — opacity + blur only (NO y transform = no bleed, no jump)
-      tl.fromTo(
-        ".hero-car-img",
-        { opacity: 0, filter: "blur(10px)" },
-        { opacity: 1, filter: "blur(0px)", duration: 2.0, ease: "power3.out" },
-        0.5
-      );
+        // CTA
+        tl.fromTo(
+          ".hero-cta",
+          { opacity: 0, y: 16, scale: 0.97 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.9 },
+          0.7
+        );
 
-      // Bottom meta
-      tl.fromTo(
-        ".hero-meta",
-        { opacity: 0, y: 10 },
-        { opacity: 1, y: 0, duration: 0.7, stagger: 0.07 },
-        1.0
-      );
+        // Car — opacity + blur only (NO y transform = no bleed, no jump)
+        tl.fromTo(
+          ".hero-car-img",
+          { opacity: 0, filter: "blur(10px)" },
+          { opacity: 1, filter: "blur(0px)", duration: 2.0, ease: "power3.out" },
+          0.5
+        );
 
-      // Glow
-      tl.fromTo(
-        ".hero-glow",
-        { opacity: 0 },
-        { opacity: 1, duration: 2.0, ease: "power2.out" },
-        0.6
-      );
+        // Bottom meta
+        tl.fromTo(
+          ".hero-meta",
+          { opacity: 0, y: 10 },
+          { opacity: 1, y: 0, duration: 0.7, stagger: 0.07 },
+          1.0
+        );
+
+        // Glow
+        tl.fromTo(
+          ".hero-glow",
+          { opacity: 0 },
+          { opacity: 1, duration: 2.0, ease: "power2.out" },
+          0.6
+        );
+      };
+
+      // Listen for loader to finish before playing entrance
+      window.addEventListener("kotohaus:loaderDone", runEntrance, { once: true });
 
       // ── Scroll: text fades out, car stays visible and scrolls off naturally ──
       gsap.to(".hero-content", {
@@ -108,9 +108,6 @@ export const Hero = () => {
       });
 
       // ── Car parallax ──
-      // Entrance uses opacity+filter, scroll uses y → zero property conflict.
-      // The container is 56svh (8svh taller than 48svh visual zone) to absorb
-      // the 55px upward drift without exposing the background beneath.
       gsap.fromTo(".hero-car-img",
         { y: 0 },
         {
@@ -126,7 +123,10 @@ export const Hero = () => {
       );
     }, root);
 
-    return () => ctx.revert();
+    return () => {
+      window.removeEventListener("kotohaus:loaderDone", () => {});
+      ctx.revert();
+    };
   }, []);
 
   return (

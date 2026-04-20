@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import bgWaves from "@/assets/bg-waves.png";
+import bgWaves from "@/assets/bg-waves.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 

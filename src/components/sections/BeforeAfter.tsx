@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import beforeImg from "@/assets/before.jpg";
-import afterImg from "@/assets/after.jpg";
+import beforeImg from "@/assets/before.webp";
+import afterImg from "@/assets/after.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 

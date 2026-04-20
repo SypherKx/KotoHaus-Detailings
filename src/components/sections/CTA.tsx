@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ctaBg from "@/assets/cta-bg.jpg";
+import ctaBg from "@/assets/cta-bg.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,14 +43,9 @@ export const CTA = () => {
       className="relative overflow-hidden bg-background py-32 md:py-44"
       style={{ scrollMarginTop: "80px" }}
     >
-      {/* Animated liquid-gold bg */}
+      {/* Animated bg */}
       <div className="cta-bg absolute inset-0 opacity-40 will-change-transform">
-        <img
-          src={ctaBg}
-          alt=""
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
+        <img src={ctaBg} alt="" className="h-full w-full object-cover" loading="lazy" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
       <div className="absolute inset-0 bg-gradient-radial-gold opacity-50" />
@@ -63,55 +58,24 @@ export const CTA = () => {
           <span className="text-gradient-gold">deserves this.</span>
         </h2>
         <p className="mx-auto mt-8 max-w-lg text-base text-muted-foreground md:text-lg">
-          Limited availability. We accept twelve cars per month to maintain
-          atelier-grade attention. Inquire to claim your slot.
+          Limited to twelve cars per month — atelier-grade attention, every time.
+          Claim your slot before it's gone.
         </p>
 
         <div className="mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">
           <a
-            href="#"
+            href="tel:+917417461255"
             className="glow-pulse group relative inline-flex items-center gap-3 rounded-full bg-primary px-10 py-4 text-sm font-medium uppercase tracking-[0.3em] text-primary-foreground transition-all duration-500 hover:bg-primary-glow"
           >
-            <span className="relative z-10">Book Consultation</span>
-            <span className="relative z-10 transition-transform duration-500 group-hover:translate-x-1">
-              →
-            </span>
+            <span className="relative z-10">Call to Book</span>
+            <span className="relative z-10 transition-transform duration-500 group-hover:translate-x-1">→</span>
           </a>
           <a
-            href="#"
-            className="text-sm uppercase tracking-[0.3em] text-muted-foreground transition-colors hover:text-foreground"
+            href="tel:+917417461255"
+            className="text-sm uppercase tracking-[0.3em] text-muted-foreground transition-colors hover:text-primary"
           >
-            Or call · (310) 555-0144
+            +91 74174 61255
           </a>
-        </div>
-
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 border-t border-border pt-10 text-left">
-          <div>
-            <div className="label-mono text-primary">Atelier</div>
-            <div className="mt-2 text-sm text-foreground/80 leading-relaxed">
-              Main road, GMS Rd, Keshav Vihar,
-              <br />
-              Shakti Enclave, Kanwali, 
-              <br />
-              Dehradun, Uttarakhand 248001
-            </div>
-          </div>
-          <div>
-            <div className="label-mono text-primary">Hours</div>
-            <div className="mt-2 text-sm text-foreground/80 leading-relaxed">
-              Mon — Sat: 10:00 AM — 8:00 PM
-              <br />
-              Sunday: Closed
-            </div>
-          </div>
-          <div>
-            <div className="label-mono text-primary">Contact</div>
-            <div className="mt-2 text-sm text-foreground/80 leading-relaxed">
-              hello@kotohaus.com
-              <br />
-              (310) 555-0144
-            </div>
-          </div>
         </div>
       </div>
     </section>
