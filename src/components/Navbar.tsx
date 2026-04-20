@@ -40,12 +40,12 @@ export const Navbar = () => {
       )}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 md:px-6">
-        {/* Logo */}
-        <Link to="/" className="group flex items-center">
+        {/* Logo — centered on mobile, left-aligned on desktop */}
+        <Link to="/" className="group flex items-center shrink-0 absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0">
           <img
             src={kotohausLogo}
             alt="Kotohaus Detailing Logo"
-            className="h-9 md:h-10 w-auto mix-blend-screen transition-opacity duration-300 group-hover:opacity-75"
+            className="h-10 md:h-14 w-auto mix-blend-screen transition-opacity duration-300 group-hover:opacity-75"
           />
         </Link>
 

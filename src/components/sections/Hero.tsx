@@ -177,7 +177,7 @@ export const Hero = () => {
           <h1
             className="hero-title font-black uppercase text-foreground leading-[0.93]"
             style={{
-              fontSize: "clamp(2.2rem, 7vw, 6.5rem)",
+              fontSize: "clamp(1.2rem, 6vw, 5.5rem)",
               letterSpacing: "-0.03em",
             }}
           >
