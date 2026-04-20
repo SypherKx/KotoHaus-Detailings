@@ -134,15 +134,16 @@ export const Hero = () => {
       ref={root}
       className="relative isolate h-[100svh] w-full overflow-hidden bg-background"
     >
-      {/* ── Background texture ── */}
+      {/* ── Background texture — fills the whole hero ── */}
       <div className="absolute inset-0 z-0">
         <img
           src={bgWaves}
           alt=""
           aria-hidden="true"
-          className="h-full w-full object-cover opacity-40"
+          className="h-full w-full object-cover opacity-65"
         />
-        <div className="absolute inset-0 bg-background/55" />
+        {/* Light vignette only at edges, not a solid overlay */}
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 120% 100% at 50% 50%, transparent 40%, hsl(0 0% 3% / 0.6) 100%)" }} />
       </div>
 
       {/* ── Atmosphere ── */}
@@ -230,42 +231,42 @@ export const Hero = () => {
               fetchPriority="high"
             />
 
-            {/* TOP: car fades in from darkness — wide gradient for soft emergence */}
+            {/* TOP: very soft fade so car doesn't have a hard ceiling */}
             <div
               className="absolute inset-x-0 top-0 pointer-events-none"
               style={{
-                height: "55%",
+                height: "30%",
                 background:
-                  "linear-gradient(to bottom, hsl(0 0% 4%) 0%, hsl(0 0% 4% / 0.75) 20%, hsl(0 0% 4% / 0.3) 55%, transparent 100%)",
+                  "linear-gradient(to bottom, hsl(0 0% 4% / 0.6) 0%, transparent 100%)",
               }}
             />
 
-            {/* LEFT: blends the car's front/nose into bg */}
+            {/* LEFT: soft edge blend, texture shows through */}
             <div
               className="absolute inset-y-0 left-0 pointer-events-none"
               style={{
-                width: "22%",
+                width: "18%",
                 background:
-                  "linear-gradient(to right, hsl(0 0% 4%) 0%, hsl(0 0% 4% / 0.6) 40%, transparent 100%)",
+                  "linear-gradient(to right, hsl(0 0% 4% / 0.5) 0%, transparent 100%)",
               }}
             />
 
-            {/* RIGHT: blends the car's tail into bg */}
+            {/* RIGHT: soft edge blend, texture shows through */}
             <div
               className="absolute inset-y-0 right-0 pointer-events-none"
               style={{
-                width: "18%",
+                width: "14%",
                 background:
-                  "linear-gradient(to left, hsl(0 0% 4%) 0%, hsl(0 0% 4% / 0.5) 40%, transparent 100%)",
+                  "linear-gradient(to left, hsl(0 0% 4% / 0.4) 0%, transparent 100%)",
               }}
             />
 
-            {/* BOTTOM: simple dark fade at ground */}
+            {/* BOTTOM: ground fade */}
             <div
               className="absolute inset-x-0 bottom-0 pointer-events-none"
               style={{
-                height: "20%",
-                background: "linear-gradient(to top, hsl(0 0% 4%), transparent)",
+                height: "18%",
+                background: "linear-gradient(to top, hsl(0 0% 3% / 0.9), transparent)",
               }}
             />
           </div>
